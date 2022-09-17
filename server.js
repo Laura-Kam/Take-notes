@@ -21,7 +21,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //this is where the note titles and text are stored in json format.
-const noteData = require("./develop/db/db.json");
+const noteData = require("./db/db.json");
 
 //public files are served
 app.use(express.static("public"));
@@ -38,13 +38,13 @@ app.get("/", (req, res) => res.send("Home page"));
 
 //path to notes page on local host. Route for getting list of notes.
 app.get("/notes", (req, res) =>
-  res.sendFile(path.join(__dirname, "/develop/public/notes.html"))
+  res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
 
 //every end point needs to be above this. Asterix catches everything.
 //path to index page on local host.
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/develop/public/index.html"))
+  res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 
 //listening port set up
