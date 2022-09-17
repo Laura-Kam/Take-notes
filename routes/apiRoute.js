@@ -20,7 +20,9 @@ router.post("/notes", (req, res) => {
     const jsonArray = JSON.parse(data);
     jsonArray.push(note);
     const jsonString = JSON.stringify(jsonArray);
-    fs.writeFile("../db/db.json", jsonString, function (error) {
+
+    //is file path correct?
+    fs.writeFile("../develop/db/db.json", jsonString, function (error) {
       res.end();
     });
   });
