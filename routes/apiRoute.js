@@ -9,8 +9,12 @@ updating route path with more notes by creating a json object and pushing it to 
 
 router.post("/notes", (req, res) => {
   console.log(req);
+
+  let id = uuid.v4();
+
   const note = {
     // id: notes.length + 1,
+    id: id,
     title: req.body.name,
     text: req.body.text,
   };
@@ -22,7 +26,7 @@ router.post("/notes", (req, res) => {
     const jsonString = JSON.stringify(jsonArray);
 
     //is file path correct?
-    fs.writeFile("../develop/db/db.json", jsonString, function (error) {
+    fs.writeFile("../db/db.json", jsonString, function (error) {
       res.end();
     });
   });
