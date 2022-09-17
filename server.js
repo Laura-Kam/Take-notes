@@ -20,6 +20,7 @@ const app = express();
 //whatever is in the environment variable PORT or 3001 if not there. E.g Heroku (envi) - whatever it sets it to.
 const PORT = process.env.PORT || 3001;
 
+//this is where the note titles and text are stored in json format.
 const noteData = require("./develop/db/db.json");
 
 //public files are served
@@ -29,7 +30,10 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//app.use puts middleware functions when request path used.
+//when user navigates to /api then go to apiRoutes (put together)
 app.use("/api", apiRoutes);
+
 app.get("/", (req, res) => res.send("Home page"));
 
 //path to notes page on local host. Route for getting list of notes.
