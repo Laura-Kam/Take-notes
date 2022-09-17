@@ -7,13 +7,11 @@
 //requiring path to work with directories and file paths.
 //require fs to allow javascript to access local files.
 
+const apiRoutes = require("./routes/apiRoute");
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
 
-//objects array to input into database.
-
-const notes = [];
 //to create a unique id
 const uuid = require("uuid");
 
@@ -31,7 +29,7 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use("/api", apiRoutes);
 app.get("/", (req, res) => res.send("Home page"));
 
 //path to notes page on local host. Route for getting list of notes.
@@ -39,48 +37,13 @@ app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/develop/public/notes.html"))
 );
 
-app.get();
+//every end point needs to be above this. Asterix catches everything.
 //path to index page on local host.
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/develop/public/index.html"))
 );
 
-//this get request is where the database file is read of notes- returns saved notes as json.
-// app.get("/api/notes", (req, res) => res.json(noteData));
-
-//same thing?
-app.get("/api/notes", function (req, res) {
-  fs.readFile("db/db.json", "utf8", function (err, data) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    res.json(notes);
-  });
-});
-
-//If client searches for a specific id of a note- then only that one is returned;
-app.get("/api/notes/:id", (req, res) => {
-  req.params.id;
-  res.send(re.params.id);
-});
-
 //listening port set up
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
-
-//posting a new note title and note text.
-//need to include customer object in the body of the request.
-// updating route path with more notes by creating a json object and pushing it to notes const array.
-app.post("/api/notes", (req, res) => {
-  const note = {
-    // id: notes.length + 1,
-    title: req.body.name,
-    text: req.body.text,
-  };
-  notes.push(note);
-  res.send(note);
-});
-
-module.exports = fs;
