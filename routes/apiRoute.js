@@ -32,7 +32,7 @@ router.post("/notes", (req, res) => {
   });
 });
 router.get("/notes", function (req, res) {
-  fs.readFile("db/db.json", "utf8", function (err, data) {
+  fs.readFile("db/db.json", "utf8", function (err, res) {
     if (err) {
       console.log(err);
       return;
@@ -40,6 +40,7 @@ router.get("/notes", function (req, res) {
     res.json(notes);
   });
 });
+
 //delete-route copy and paste post endpoint.
 router.delete("/notes/:id", (req, res) => {
   const id = req.params.id;
