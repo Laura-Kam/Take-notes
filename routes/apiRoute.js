@@ -40,7 +40,7 @@ fs.readFile("../db/db.json", function (error, data) {
 });
 
 router.get("/notes", function (req, res) {
-  fs.readFile("db/db.json", "utf8", function (err, res) {
+  fs.readFile("db/db.json", "utf8", function (err, note) {
     if (err) {
       console.log(err);
       return;
