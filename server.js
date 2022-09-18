@@ -29,7 +29,6 @@ app.use("/api", apiRoutes);
 
 app.get("/", (req, res) => res.send("Home page"));
 
-//path to notes page on local host. Route for getting list of notes.
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
 );

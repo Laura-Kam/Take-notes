@@ -28,18 +28,18 @@ router.post("/notes", (req, res) => {
   });
 });
 
-/*read the existing db.json file, parse it into json, add note object to array,
-  stringify, write to db.json file. End with sending note.*/
-fs.readFile("./db/db.json", function (error, data) {
-  console.log("Data: " + data);
-  const jsonArray = JSON.parse(data);
-  jsonArray.push(note);
-  const jsonString = JSON.stringify(jsonArray);
-  //is file path correct?
-  fs.writeFile("./db/db.json", jsonString, function (error) {
-    res.end();
-  });
-});
+// /*read the existing db.json file, parse it into json, add note object to array,
+//   stringify, write to db.json file. End with sending note.*/
+// fs.readFile("./db/db.json", function (error, data) {
+//   console.log("Data: " + data);
+//   const jsonArray = JSON.parse(data);
+//   jsonArray.push(note);
+//   const jsonString = JSON.stringify(jsonArray);
+//   //is file path correct?
+//   fs.writeFile("./db/db.json", jsonString, function (error) {
+//     res.end();
+//   });
+// });
 
 router.get("/notes", function (req, res) {
   fs.readFile("./db/db.json", "utf8", function (err, note) {
