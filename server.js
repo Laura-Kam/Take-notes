@@ -1,11 +1,4 @@
-//http://localhost:3001/api/notes -the resource-should be where the db_json file is read.
-//Refers to the notes created by a user in out application. Creating more notes- done by sending http request to this endpoint.
-
-//get api/notes.:id response would be {id 1, name "")} etc . - param.
-
-//requiring express module.
-//requiring path to work with directories and file paths.
-//require fs to allow javascript to access local files.
+//requiring dependencies.
 
 const apiRoutes = require("./routes/apiRoute");
 const express = require("express");
@@ -21,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //this is where the note titles and text are stored in json format.
-const noteData = require("./db/db.json");
+let notes = require("./db/db.json");
 
 //public files are served
 app.use(express.static("public"));
