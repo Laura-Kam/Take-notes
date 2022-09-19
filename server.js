@@ -1,6 +1,7 @@
 //requiring dependencies.
 
 const apiRoutes = require("./routes/apiRoute");
+const htmlRoutes = require("./routes/htmlRoute");
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
@@ -26,18 +27,7 @@ app.use(express.json());
 //app.use puts middleware functions when request path used.
 //when user navigates to /api then go to apiRoutes (put together)
 app.use("/api", apiRoutes);
-
-app.get("/", (req, res) => res.send("Home page"));
-
-app.get("/notes", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public/notes.html"))
-);
-
-//every end point needs to be above this. Asterix catches everything.
-//path to index page on local host.
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public/index.html"))
-);
+app.use("/", htmlRoutes);
 
 //listening port set up
 app.listen(PORT, () =>

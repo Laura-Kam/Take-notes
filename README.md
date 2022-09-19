@@ -8,14 +8,12 @@
 - [Project Description](#short-description)
 - [License](#license)
 - [Command to install](#command-to-install)
-- [Command to run tests](#command-to-run-tests)
 - [Instructions for users](#instructions-for-users-of-the-app)
 - [Features of the project](#features-of-the-project)
 - [Link to GitHub Repo](#Link-to-Git-hub-repo.)
 - [Screenshot of Application](#Screenshot-of-Application)
 - [Bugs](#bugs)
 - [Version History](#Version-history)
-- [Link to video](#Link-to-video)
 - [How to contribute](#how-to-contribute)
 - [Questions](#questions)
 
@@ -35,21 +33,17 @@ MIT
 
 npm i
 
-## Command to run tests
-
-npm test
-
 ## Instructions for users of the app
 
-Clone the repository, run the application through the terminal in index.js by writing node index.js
+Clone the repository, run the application through the terminal in server.js by writing npm start.
 
 ## Features of the project
 
-Project includes rendering a html page to show information about your team.
+Project includes saving notes to a html page, and being able to delete them.
 
 ## Link to Git-hub repo.
 
-[Link to repo](https://github.com/Laura-Kam/Dream-Team-Manager)
+[Link to repo](https://github.com/Laura-Kam/Take-notes)
 
 ## Screenshot of application:
 
@@ -57,27 +51,20 @@ Project includes rendering a html page to show information about your team.
 
 ## bugs
 
-- Test initially were not working, bug fixed.
-- HTML page was not rendering.
+- Routes not connecting.
+- HTML page was not rendering in local host.
   -Issues exporting modules.
 
 ## Version history
 
-- 0.1 Created classes
-- 0.2 Created tests
-- 0.3 Created html template
-- 0.4 Attempted to create an array of user input to use in template.
-- 0.5 Attempted to get page to render dynamically.
+- 0.1 Required dependencies
+- 0.2 Created middlewares
+- 0.3 Created Routes
+- 0.4 Attempted to create an array of objects from user input.
 
 ## License
 
 - MIT
-
-# Link to video
-
-- [Readme-quick Video Google Drive](https://drive.google.com/file/d/1P35032qxT5Y5CYR82vpWy7SYpYje4rNi/view)
-
-- [Readme-quick Video Screencastify](https://watch.screencastify.com/v/ZxMdmq1hBFPSLxlwBT4L)
 
   ## How to contribute
 
