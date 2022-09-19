@@ -7,6 +7,7 @@
 - [Username](#username)
 - [Project Description](#short-description)
 - [License](#license)
+- [Heroku](#Heroku)
 - [Command to install](#command-to-install)
 - [Instructions for users](#instructions-for-users-of-the-app)
 - [Features of the project](#features-of-the-project)
@@ -47,13 +48,13 @@ Project includes saving notes to a html page, and being able to delete them.
 
 ## Screenshot of application:
 
-[Screenshot of website](https://github.com/Laura-Kam/Dream-Team-Manager/issues/1#issue-1370506573)
+[Screenshot of website](https://github.com/Laura-Kam/Take-notes/issues/1#issue-1378325732)
 
-## bugs
+## Bugs
 
 - Routes not connecting.
 - HTML page was not rendering in local host.
-  -Issues exporting modules.
+- Issues exporting modules.
 
 ## Version history
 
@@ -61,16 +62,21 @@ Project includes saving notes to a html page, and being able to delete them.
 - 0.2 Created middlewares
 - 0.3 Created Routes
 - 0.4 Attempted to create an array of objects from user input.
+- final changes, all bugs fixed.
 
 ## License
 
 - MIT
 
-  ## How to contribute
+## Heroku
 
-  Git clone, work on the code, make a pull request
+[Heroku](https://secure-ocean-47907.herokuapp.com/)
 
-  ## Questions
+## How to contribute
 
-  If you have any questions, or would like to get in touch find me on GitHub [Laura-Kam](https://github.com/Laura-Kam)
-  or email me at laura_k@yahoo.co.uk.
+Git clone, work on the code, make a pull request
+
+## Questions
+
+If you have any questions, or would like to get in touch find me on GitHub [Laura-Kam](https://github.com/Laura-Kam)
+or email me at laura_k@yahoo.co.uk.

@@ -11,7 +11,7 @@ const uuid = require("uuid");
 
 const app = express();
 
-//whatever is in the environment variable PORT or 3001 if not there. E.g Heroku (envi) - whatever it sets it to.
+//whatever is in the environment variable PORT or 3001 if not there. E.g Heroku (envi).
 const PORT = process.env.PORT || 3001;
 
 //this is where the note titles and text are stored in json format.
