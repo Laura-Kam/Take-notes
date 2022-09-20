@@ -1,6 +1,6 @@
 //dependencies
 const router = require("express").Router();
-const uuid = require("uuid");
+const { v4: uuid } = require("uuid");
 const fs = require("fs");
 const express = require("express");
 const path = require("path");
@@ -8,7 +8,12 @@ const db = require("../db/db.json");
 
 //post router
 router.post("/notes", (req, res) => {
-  db.push(req.body);
+  const note = {
+    id: uuid(),
+    title: req.body.title,
+    text: req.body.text,
+  };
+  db.push(note);
   fs.writeFile("./db/db.json", JSON.stringify(db), (err) => err);
   res.json(db);
 });
